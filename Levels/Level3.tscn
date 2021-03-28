@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Enemy/Enemy_Ground.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Cave_Foreground.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Cave_Background.png" type="Texture" id=13]
 [ext_resource path="res://Fire/Fire_Container.gd" type="Script" id=14]
+[ext_resource path="res://Assets/snowkinda.png" type="Texture" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Cave_Background.png 0"
@@ -236,6 +237,20 @@ extents = Vector2( 245.266, 201.803 )
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "snowkinda.png 1"
+1/texture = ExtResource( 15 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="Game" type="Node2D"]
 
@@ -269,8 +284,11 @@ script = ExtResource( 1 )
 script = ExtResource( 7 )
 
 [node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 2 )]
+position = Vector2( 841.009, 997.807 )
+max_constraint = 800
 
 [node name="Enemy_Flying" parent="Enemy_Container" instance=ExtResource( 3 )]
+position = Vector2( 2418.08, -96.7964 )
 
 [node name="Fire_Container" type="Node2D" parent="."]
 script = ExtResource( 14 )
@@ -282,6 +300,7 @@ script = ExtResource( 11 )
 position = Vector2( 1663.51, 956.914 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 15 )
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire_Container/Fire"]
@@ -296,7 +315,7 @@ script = ExtResource( 11 )
 position = Vector2( 1663.51, 956.914 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 15 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire_Container/Fire2"]
@@ -317,7 +336,7 @@ cell_size = Vector2( 256, 256 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 7, 0, 0 )
+tile_data = PoolIntArray( 7, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true

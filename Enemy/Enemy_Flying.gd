@@ -18,9 +18,11 @@ func _physics_process(_delta):
 			if c.name == "Player":
 				velocity = ray.cast_to.normalized()*speed
 			move_and_slide(velocity, Vector2(0,0))
+	
 
 
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.do_damage(damage)
+
