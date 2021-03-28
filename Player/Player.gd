@@ -21,6 +21,7 @@ var moving = false
 var is_jumping = false
 var double_jumped = false
 
+onready var Footstep = get_node("AnimatedSprite/Footstep")
 
 
 func _physics_process(_delta):
@@ -31,6 +32,13 @@ func _physics_process(_delta):
 	
 	if is_on_floor():
 		double_jumped = false
+	
+	if velocity.x != 0 and is_on_floor():
+		if !Footstep.playing:
+			Footstep.play()
+	elif Footstep.playing:
+		Footstep.stop()
+
 
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
