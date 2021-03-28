@@ -20,6 +20,7 @@ var saves = [
 
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
+	load("res://Music/Music.tscn")
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):

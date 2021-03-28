@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Cave_Foreground.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Cave_Background.png" type="Texture" id=12]
 [ext_resource path="res://Levels/Portal.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Blues.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Cave_Background.png 0"
@@ -197,6 +197,7 @@ extents = Vector2( 245.266, 201.803 )
 0/z_index = 0
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 14 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 3000.0
@@ -268,10 +269,6 @@ drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
 script = ExtResource( 3 )
-
-[node name="Music" type="AudioStreamPlayer2D" parent="Camera"]
-stream = ExtResource( 14 )
-autoplay = true
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
 [connection signal="body_entered" from="Portal_to_2" to="Portal_to_2" method="_on_Portal_entered"]
