@@ -1,0 +1,275 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
+[ext_resource path="res://Enemy/Enemy_Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy/Enemy_Flying.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Orange.png" type="Texture" id=5]
+[ext_resource path="res://Assets/256x256 tilemap.png" type="Texture" id=6]
+[ext_resource path="res://Fire/Fire.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Portal.gd" type="Script" id=9]
+[ext_resource path="res://HUD/UI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Cave_Foreground.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Cave_Background.png" type="Texture" id=13]
+[ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=14]
+[ext_resource path="res://Fire/Fire_Container.gd" type="Script" id=15]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Cave_Background.png 0"
+0/texture = ExtResource( 13 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1024, 1024 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 256, 0, 256, 160, 96, 160, 32, 96, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 256, 160, 0, 160, 0, 0, 256, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 256, 0, 224, 96, 160, 160, 0, 160 )
+
+[sub_resource type="TileSet" id=8]
+0/name = "256x256 tilemap.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 256, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "256x256 tilemap.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 256, 256, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "256x256 tilemap.png 2"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 512, 256, 256, 256 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 4 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "256x256 tilemap.png 3"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 256, 256 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 5 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "256x256 tilemap.png 4"
+4/texture = ExtResource( 6 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 256, 0, 256, 256 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 6 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "256x256 tilemap.png 5"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 512, 0, 256, 256 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 7 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 245.266, 201.803 )
+
+[sub_resource type="TileSet" id=10]
+0/name = "Cave_Foreground.png 0"
+0/texture = ExtResource( 12 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1024, 1024 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 3000.0
+margin_bottom = 3000.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 2147483648
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 7, 0, 0 )
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = SubResource( 8 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 11, 0, 0, 65536, 0, 0, 65547, 0, 0, 131072, 0, 0, 131083, 0, 0, 196608, 0, 0, 196619, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 327682, 0, 0 )
+
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 2 )]
+
+[node name="Enemy_Flying" parent="Enemy_Container" instance=ExtResource( 3 )]
+
+[node name="Fire_Container" type="Node2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="Fire" parent="Fire_Container" instance=ExtResource( 8 )]
+position = Vector2( -114.164, 242.598 )
+
+[node name="Fire2" parent="Fire_Container" instance=ExtResource( 8 )]
+position = Vector2( -604.117, 252.112 )
+
+[node name="Portal_to_3" type="Area2D" parent="."]
+position = Vector2( 2408.33, 891.35 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_to_3"]
+position = Vector2( 156.801, -65.6868 )
+shape = SubResource( 9 )
+
+[node name="Foreground" type="TileMap" parent="."]
+tile_set = SubResource( 10 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 7, 0, 0 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+limit_left = 0
+limit_top = 0
+limit_right = 6000
+limit_bottom = 3000
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+offset_v = -1.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+script = ExtResource( 4 )
+
+[node name="UI" parent="." instance=ExtResource( 10 )]
+[connection signal="body_entered" from="Portal_to_3" to="Portal_to_3" method="_on_Portal_entered"]
