@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/256x256 tilemap.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Orange.png" type="Texture" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/snowkinda.png" type="Texture" id=4]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=5]
+[ext_resource path="res://Enemy/Enemy_Ground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=7]
 [ext_resource path="res://HUD/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Fire/Fire.tscn" type="PackedScene" id=9]
@@ -193,6 +195,20 @@ extents = Vector2( 245.266, 201.803 )
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "snowkinda.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 14 )
@@ -226,6 +242,12 @@ script = ExtResource( 5 )
 [node name="Enemy_Container" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
+[node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 6 )]
+position = Vector2( 880.125, 982.749 )
+scale = Vector2( 0.4, 0.4 )
+max_constraint = 900
+min_constraint = 1070
+
 [node name="Fire_Container" type="Node2D" parent="."]
 script = ExtResource( 10 )
 
@@ -246,7 +268,7 @@ cell_size = Vector2( 256, 256 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 7, 0, 0 )
+tile_data = PoolIntArray( 7, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
