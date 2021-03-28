@@ -215,18 +215,18 @@ extents = Vector2( 245.266, 201.803 )
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 16 )
-shader_param/angle = -0.3
-shader_param/position = -0.2
-shader_param/spread = 0.5
-shader_param/cutoff = 0.1
-shader_param/falloff = 0.2
-shader_param/edge_fade = 0.15
-shader_param/speed = 1.0
-shader_param/ray1_density = 8.0
-shader_param/ray2_density = 30.0
-shader_param/ray2_intensity = 0.3
-shader_param/color = Color( 1, 0.9, 0.65, 0.8 )
-shader_param/hdr = false
+shader_param/angle = 0.0
+shader_param/position = 0.0
+shader_param/spread = 0.07
+shader_param/cutoff = 0.146
+shader_param/falloff = 0.579
+shader_param/edge_fade = 0.265
+shader_param/speed = 0.5
+shader_param/ray1_density = 5.0
+shader_param/ray2_density = 20.0
+shader_param/ray2_intensity = 0.438
+shader_param/color = Color( 0.815686, 0.72549, 0.490196, 0.8 )
+shader_param/hdr = true
 shader_param/seed = 5.0
 
 [node name="Game" type="Node2D"]
@@ -310,8 +310,8 @@ script = ExtResource( 3 )
 
 [node name="God Rays" type="Sprite" parent="."]
 material = SubResource( 12 )
-position = Vector2( 1622.71, 182.178 )
-scale = Vector2( 10, 60 )
+position = Vector2( 1730.34, 266.268 )
+scale = Vector2( 25, 60 )
 texture = ExtResource( 17 )
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
