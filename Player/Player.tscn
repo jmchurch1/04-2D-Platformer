@@ -156,7 +156,7 @@ background_mode = 4
 glow_enabled = true
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 8, 23 )
+extents = Vector2( 57.734, 139.794 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 200, 200 )
@@ -180,6 +180,7 @@ stream = ExtResource( 11 )
 environment = SubResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.24747, -114.62 )
 shape = SubResource( 14 )
 
 [node name="Floor" type="Node2D" parent="."]
