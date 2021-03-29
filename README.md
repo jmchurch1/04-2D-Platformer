@@ -1,12 +1,15 @@
 ## 04-2D-Platformer
 A 2D platformer for C220
 3/27/2021
-This game has three levels, all the artwork is done by myself. Other than the music.
+- This game has three levels
+- All Sprite art done by myself
 ## Implimentation
 - Music by patrickdearteaga.com
-- Sound effects by ""
-- Art by Josh Church
-- I want to do stuff with shaders
+- Running sound effect by "Sound Fishing"
+- Paralax Background by Ansimuz, Open Game Art
+- Waterfall Shader by pend00
+- God Ray Shader by pend00
+- Palette Filter Shader by Fernando Brandt
 ## References
 patrickdearteaga.com
 ## Future Developement
