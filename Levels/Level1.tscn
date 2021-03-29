@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/256x256 tilemap.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Orange.png" type="Texture" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Assets/snowkinda.png" type="Texture" id=4]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=5]
@@ -231,14 +230,6 @@ shader_param/seed = 5.0
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 14 )
-
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 3000.0
-margin_bottom = 3000.0
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
