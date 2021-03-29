@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Orange.png" type="Texture" id=5]
 [ext_resource path="res://Assets/256x256 tilemap.png" type="Texture" id=6]
 [ext_resource path="res://Assets/snowkinda.png" type="Texture" id=7]
-[ext_resource path="res://Fire/Fire.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/test-waterfall.png" type="Texture" id=8]
 [ext_resource path="res://Levels/Portal.gd" type="Script" id=9]
 [ext_resource path="res://HUD/UI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Shaders/Waterfall.tscn" type="PackedScene" id=11]
@@ -31,6 +31,20 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "test-waterfall.png 1"
+1/texture = ExtResource( 8 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 768, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
@@ -227,7 +241,7 @@ cell_size = Vector2( 256, 256 )
 collision_layer = 2147483648
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 7, 0, 0 )
+tile_data = PoolIntArray( 4, 1, 0, 7, 0, 0 )
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = SubResource( 8 )
@@ -252,12 +266,6 @@ position = Vector2( 244, -128 )
 
 [node name="Fire_Container" type="Node2D" parent="."]
 script = ExtResource( 15 )
-
-[node name="Fire" parent="Fire_Container" instance=ExtResource( 8 )]
-position = Vector2( -114.164, 242.598 )
-
-[node name="Fire2" parent="Fire_Container" instance=ExtResource( 8 )]
-position = Vector2( -604.117, 252.112 )
 
 [node name="Portal_to_3" type="Area2D" parent="."]
 position = Vector2( 2408.33, 891.35 )
@@ -294,4 +302,6 @@ script = ExtResource( 4 )
 [node name="UI" parent="." instance=ExtResource( 10 )]
 
 [node name="Waterfall" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1397.81, 536.07 )
+scale = Vector2( 5.5, 20 )
 [connection signal="body_entered" from="Portal_to_3" to="Portal_to_3" method="_on_Portal_entered"]

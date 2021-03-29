@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/256x256 tilemap.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Orange.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Assets/Cave_Background.png" type="Texture" id=12]
 [ext_resource path="res://Levels/Portal.gd" type="Script" id=13]
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=14]
-[ext_resource path="res://Enemy/Enemy_Flying.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Shaders/God_Rays.shader" type="Shader" id=16]
 [ext_resource path="res://Assets/yelta-ys-funky-jam-32x.png" type="Texture" id=17]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=18]
@@ -270,9 +269,6 @@ position = Vector2( 880.125, 982.749 )
 scale = Vector2( 0.4, 0.4 )
 max_constraint = 900
 min_constraint = 1070
-
-[node name="Enemy_Flying" parent="Enemy_Container" instance=ExtResource( 15 )]
-position = Vector2( 410.358, 659.263 )
 
 [node name="Fire_Container" type="Node2D" parent="."]
 script = ExtResource( 10 )
