@@ -11,7 +11,9 @@ A 2D platformer for C220
 - God Ray Shader by pend00
 - Palette Filter Shader by Fernando Brandt
 ## References
-patrickdearteaga.com
+- patrickdearteaga.com
+- godotshaders.com
+- opengameart.org
 ## Future Developement
 add attacking when I am much less busy as well as more levels
 ## Created by
