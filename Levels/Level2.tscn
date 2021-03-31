@@ -253,8 +253,6 @@ script = ExtResource( 14 )
 
 [node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 2 )]
 position = Vector2( 1250.23, 1000.53 )
-max_constraint = 1000
-min_constraint = 1300
 
 [node name="Enemy_Flying" parent="Enemy_Container" instance=ExtResource( 3 )]
 position = Vector2( 244, -128 )

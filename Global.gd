@@ -74,20 +74,25 @@ func get_save_data():
 			data["enemy_flying"].append(temp)
 	var fire = get_node("/root/Game/Fire_Container").get_children()
 	for f in fire:
-		var temp = {"position":var2str(f.position), "score":f.score}
+		var temp = {"position":var2str(f.position)}
 		data["fire"].append(temp)
 	print(data)
 	return data
 
-
-
-
-func load_save_data(data):
+func load_save_level(data):
 	score = data["score"]
 	lives = data["lives"]
 	health = data["health"]
 	level = data["level"]
 	
+	get_tree().change_scene(Global.levels[Global.level])
+	call_deferred("load_save_data", data)
+
+func load_save_data(data):
+
+	var menu = get_node_or_null("/root/Game/UI/Menu")
+	if menu != null:
+		menu.show()
 	
 	if data["player"] != "":
 		var player = get_node_or_null("/root/Game/Player_Container/Player")
@@ -108,8 +113,8 @@ func load_save_data(data):
 	for f in fire_container.get_children():
 		f.queue_free()
 	for f in data["fire"]:
-		var attr = {"score":f["score"]}
-		fire_container.spawn(attr, str2var(f["position"]))
+		print(f["position"])
+		fire_container.spawn(str2var(f["position"]))
 	
 		
 	
@@ -128,7 +133,7 @@ func load_game(which_file):
 		var data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
-			load_save_data(data)
+			load_save_level(data)
 		else:
 			printerr("Corrupted Data")
 	else:

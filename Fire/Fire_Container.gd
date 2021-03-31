@@ -1,8 +1,7 @@
 extends Node2D
 
 onready var Fire = load("res://Fire/Fire.tscn")
-func spawn(attr, p):
+func spawn(p):
 	var fire = Fire.instance()
-	for a in attr:
-		fire[a] = attr[a]
 	fire.position = p
+	add_child(fire)

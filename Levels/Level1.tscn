@@ -252,14 +252,13 @@ script = ExtResource( 5 )
 script = ExtResource( 7 )
 
 [node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 6 )]
-position = Vector2( 880.125, 982.749 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 880.125, 994.616 )
 
 [node name="Fire_Container" type="Node2D" parent="."]
 script = ExtResource( 10 )
 
 [node name="Fire" parent="Fire_Container" instance=ExtResource( 9 )]
-position = Vector2( 59.9321, 257.709 )
+position = Vector2( 1667.72, 960.698 )
 
 [node name="Portal_to_2" type="Area2D" parent="."]
 position = Vector2( 2408.33, 891.35 )

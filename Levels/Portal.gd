@@ -9,6 +9,8 @@ func _on_Portal_entered(body):
 			Global.level = 2
 		if Global.level < Global.levels.size():
 			get_tree().change_scene(Global.levels[Global.level])
+		else:
+			get_tree().change_scene("res://Levels/Game_Over.tscn")
 
 
 
