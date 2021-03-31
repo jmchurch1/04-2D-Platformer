@@ -2,7 +2,7 @@ extends Node
 
 var score = 0
 var lives = 5
-var level = 1
+var level = 0
 var max_live = 5
 var max_health = 100
 var health = 100
@@ -76,6 +76,7 @@ func get_save_data():
 	for f in fire:
 		var temp = {"position":var2str(f.position), "score":f.score}
 		data["fire"].append(temp)
+	print(data)
 	return data
 
 
@@ -98,7 +99,7 @@ func load_save_data(data):
 	for e in enemy_container.get_children():
 		e.queue_free()
 	for e in data["enemy_ground"]:
-		var attr = {"max_contraint":e["max_constraint"], "min_constraint":e["min_constraint"]}
+		var attr = {"max_constraint":e["max_constraint"], "min_constraint":e["min_constraint"]}
 		enemy_container.spawn("Enemy_Ground", attr, str2var(e["position"]))
 	for e in data["enemy_flying"]:
 		var attr = {}

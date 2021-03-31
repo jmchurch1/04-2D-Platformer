@@ -78,7 +78,9 @@ func is_on_left_wall():
 
 func do_damage(d):
 	Global.decrease_health(d)
+	print(Global.health)
 	if Global.health == 0 or Global.health <= 0:
+		print("should die")
 		die()
 
 func die():

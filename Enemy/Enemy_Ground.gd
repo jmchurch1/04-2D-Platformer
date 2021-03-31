@@ -3,8 +3,8 @@ extends KinematicBody2D
 
 export var speed = 20
 export var damage = 10
-export var max_constraint = 600
-export var min_constraint = 1300
+export var max_constraint = 600.0
+export var min_constraint = 1300.0
 var direction = 1
 var velocity = Vector2.ZERO
 
@@ -30,4 +30,4 @@ func _physics_process(_delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		Global.health -= damage
+		body.do_damage(damage)

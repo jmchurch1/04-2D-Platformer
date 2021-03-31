@@ -45,16 +45,14 @@ animations = [ {
 radius = 180.941
 
 [node name="Enemy_Ground" type="KinematicBody2D" groups=[
-"Enemy_Flying",
+"Enemy_Ground",
 ]]
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
-max_constraint = 848
-min_constraint = 1048
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
